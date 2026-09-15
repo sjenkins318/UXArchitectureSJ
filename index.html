@@ -16,13 +16,18 @@
             </button>
 
             <div class="filter-chips">
-              <apl-filter-chip preset="customizable-filter" text="Book of business" disabled></apl-filter-chip>
-              <apl-filter-chip preset="customizable-filter" text="Smith family" active></apl-filter-chip>
-              <apl-filter-chip preset="customizable-filter" text="Davis Family" disabled></apl-filter-chip>
-              <apl-button icon-only size="compact" icon-transparent-background label="Add filter">
-                <apl-icon icon="plus"></apl-icon>
-                <span slot="icon-alt-text"></span>
-              </apl-button>
+              <button class="filter-chip" type="button" disabled>Book of business</button>
+              <button class="filter-chip filter-chip--active" type="button">
+                Smith family
+                <svg class="filter-chip__close" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
+              </button>
+              <button class="filter-chip" type="button" disabled>
+                Davis Family
+                <svg class="filter-chip__chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+              </button>
+              <button class="nav-icon-button" type="button" aria-label="Add filter">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+              </button>
             </div>
           </div>
 
@@ -30,33 +35,27 @@
             <button class="glyph-icon-button" type="button" aria-label="Addison">
               <img src="/icons/addison-avatar.svg" alt="" />
             </button>
-            <apl-button icon-only icon-transparent-background label="Clients">
-              <apl-icon icon="users"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
-            <apl-button icon-only icon-transparent-background label="Reports">
-              <apl-icon icon="chart-bar"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
-            <apl-button icon-only icon-transparent-background label="Billing">
-              <apl-icon icon="dollar-sign"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
-            <apl-button icon-only icon-transparent-background label="Alerts">
-              <apl-icon icon="triangle-exclamation"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
+            <button class="nav-icon-button" type="button" aria-label="Clients">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#users"></use></svg>
+            </button>
+            <button class="nav-icon-button" type="button" aria-label="Reports">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
+            </button>
+            <button class="nav-icon-button" type="button" aria-label="Billing">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#dollar-sign"></use></svg>
+            </button>
+            <button class="nav-icon-button" type="button" aria-label="Alerts">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#triangle-exclamation"></use></svg>
+            </button>
             <button class="glyph-icon-button" type="button" aria-label="Addepar Library">
               <img src="/icons/addepar-library.svg" alt="" />
             </button>
-            <apl-button icon-only icon-transparent-background label="Help">
-              <apl-icon icon="question-circle"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
-            <apl-button icon-only icon-transparent-background label="Notifications">
-              <apl-icon icon="bell"></apl-icon>
-              <span slot="icon-alt-text"></span>
-            </apl-button>
+            <button class="nav-icon-button" type="button" aria-label="Help">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#question-circle"></use></svg>
+            </button>
+            <button class="nav-icon-button" type="button" aria-label="Notifications">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#bell"></use></svg>
+            </button>
             <div class="profile-avatar" title="Ben Adams">BA</div>
           </div>
         </div>
@@ -67,21 +66,76 @@
       </header>
 
       <div class="page-container">
-        <apl-left-menu collapsible active-value="Overview" class="left-nav">
-          <apl-left-menu-item label="Overview" value="Overview" leading-icon="house"></apl-left-menu-item>
-          <apl-left-menu-item label="Performance" value="Performance" leading-icon="chart-line"></apl-left-menu-item>
-          <apl-left-menu-item label="Risk" value="Risk" leading-icon="triangle-exclamation"></apl-left-menu-item>
-          <apl-left-menu-item label="Allocation" value="Allocation" leading-icon="chart-pie"></apl-left-menu-item>
-          <apl-left-menu-item label="Cash flow" value="Cash flow" leading-icon="money-bill"></apl-left-menu-item>
-          <apl-left-menu-item label="Holdings" value="Holdings" leading-icon="layer-group"></apl-left-menu-item>
-          <apl-left-menu-item label="Documents" value="Documents" leading-icon="files"></apl-left-menu-item>
-          <apl-line level="1"></apl-line>
-          <apl-left-menu-section label="Resources" leading-icon="globe" heading-type="expandable"></apl-left-menu-section>
-          <apl-left-menu-section label="Utilities" leading-icon="screwdriver-wrench" heading-type="expandable"></apl-left-menu-section>
-        </apl-left-menu>
+        <nav class="left-nav" aria-label="Primary">
+          <ul class="left-nav__list">
+            <li>
+              <a class="left-nav__item left-nav__item--active" href="#overview">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#performance">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-line"></use></svg>
+                <span>Performance</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#risk">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#triangle-exclamation"></use></svg>
+                <span>Risk</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#allocation">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-pie"></use></svg>
+                <span>Allocation</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#cash-flow">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#money-bill"></use></svg>
+                <span>Cash flow</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#holdings">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#layer-group"></use></svg>
+                <span>Holdings</span>
+              </a>
+            </li>
+            <li>
+              <a class="left-nav__item" href="#documents">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#files"></use></svg>
+                <span>Documents</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="left-nav__divider"></div>
+
+          <ul class="left-nav__list">
+            <li class="left-nav__section">
+              <button class="left-nav__section-toggle" type="button" aria-expanded="false">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#globe"></use></svg>
+                <span>Resources</span>
+                <svg class="icon left-nav__section-chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+              </button>
+            </li>
+            <li class="left-nav__section">
+              <button class="left-nav__section-toggle" type="button" aria-expanded="false">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#screwdriver-wrench"></use></svg>
+                <span>Utilities</span>
+                <svg class="icon left-nav__section-chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
 
         <div class="page-content">
-          <apl-page-header header-title="Page title" show-back-button="false"></apl-page-header>
+          <div class="page-header">
+            <h1 class="page-header__title">Page title</h1>
+          </div>
           <div class="content-container"></div>
         </div>
       </div>

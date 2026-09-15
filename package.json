@@ -13,7 +13,6 @@
     "vite": "^8.2.2"
   },
   "dependencies": {
-    "@addepar/apl-wc": "^1.168.0",
     "@addepar/design-tokens": "^2.141.0"
   }
 }

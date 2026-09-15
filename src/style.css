@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/TiemposHeadlineWeb-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url('/fonts/TiemposHeadlineWeb-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
 }
@@ -14,7 +35,7 @@ body,
 }
 
 body {
-  font-family: var(--font-family-body, 'Inter', sans-serif);
+  font-family: 'Inter', sans-serif;
   overflow-x: auto;
 }
 
@@ -26,6 +47,17 @@ body {
   overflow: hidden;
 }
 
+/* Icons */
+
+.icon {
+  --iconoclash-shared-0: currentColor;
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
 /* Global nav */
 
 .global-nav {
@@ -33,6 +65,7 @@ body {
   flex-shrink: 0;
   background: var(--color-gn-bg-menu-dark);
   border-bottom: 1px solid var(--color-gn-border-accessible-dark);
+  color: var(--color-gn-text-primary-dark);
 }
 
 .global-nav__bar {
@@ -81,17 +114,25 @@ body {
   color: var(--color-gn-text-primary-dark);
 }
 
-.logo-button {
+/* Buttons */
+
+.logo-button,
+.glyph-icon-button,
+.nav-icon-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  padding: 8px;
   border: none;
   border-radius: 4px;
   background: transparent;
+  color: var(--color-gn-icon-primary-dark);
   cursor: pointer;
+}
+
+.logo-button {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
 }
 
 .logo-button img {
@@ -101,19 +142,8 @@ body {
 }
 
 .glyph-icon-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 32px;
   height: 32px;
-  border: none;
-  border-radius: 4px;
-  background: transparent;
-  cursor: pointer;
-}
-
-.glyph-icon-button:hover {
-  background: var(--color-gn-action-secondary-hover-dark);
 }
 
 .glyph-icon-button img {
@@ -121,6 +151,61 @@ body {
   height: 18px;
   display: block;
 }
+
+.nav-icon-button {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-icon-button .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.glyph-icon-button:hover,
+.nav-icon-button:hover {
+  background: var(--color-gn-action-secondary-hover-dark);
+}
+
+/* Filter chips */
+
+.filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-gn-text-primary-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.filter-chip:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.filter-chip:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.filter-chip--active {
+  background: rgba(255, 255, 255, 0.16);
+  opacity: 1;
+}
+
+.filter-chip__close,
+.filter-chip__chevron {
+  width: 10px;
+  height: 10px;
+}
+
+/* Profile avatar */
 
 .profile-avatar {
   display: flex;
@@ -146,12 +231,6 @@ body {
   display: flex;
   align-items: stretch;
   min-height: 0;
-  min-width: 600px;
-}
-
-.left-nav {
-  flex-shrink: 0;
-  border-top: 1px solid rgba(219, 231, 255, 0.31);
 }
 
 .page-content {
@@ -167,4 +246,115 @@ body {
   flex: 1 0 0;
   min-height: 0;
   width: 100%;
+}
+
+/* Left nav */
+
+.left-nav {
+  flex-shrink: 0;
+  width: 236px;
+  padding: 16px 8px;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border-action-secondary-light, rgba(219, 231, 255, 0.31));
+  border-right: 1px solid var(--color-border-action-secondary-light, rgba(229, 231, 235, 1));
+  overflow-y: auto;
+}
+
+.left-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav__divider {
+  height: 1px;
+  margin: 12px 8px;
+  background: var(--color-border-action-secondary-light, rgba(229, 231, 235, 1));
+}
+
+.left-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: var(--color-text-primary-light);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.left-nav__item .icon {
+  color: var(--color-icon-secondary-light);
+}
+
+.left-nav__item:hover {
+  background: var(--color-action-secondary-hover-light);
+}
+
+.left-nav__item--active {
+  background: var(--color-action-selected-light);
+  font-weight: 500;
+}
+
+.left-nav__item--active .icon {
+  color: var(--color-icon-primary-light);
+}
+
+.left-nav__section-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-text-primary-light);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.left-nav__section-toggle:hover {
+  background: var(--color-action-secondary-hover-light);
+}
+
+.left-nav__section-toggle .icon:first-child {
+  color: var(--color-icon-secondary-light);
+}
+
+.left-nav__section-chevron {
+  width: 10px;
+  height: 10px;
+  margin-left: auto;
+  color: var(--color-icon-secondary-light);
+  transition: transform 0.15s ease;
+}
+
+.left-nav__section-toggle[aria-expanded='true'] .left-nav__section-chevron {
+  transform: rotate(180deg);
+}
+
+/* Page header */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.page-header__title {
+  margin: 0;
+  font-family: 'Tiempos Headline', Georgia, serif;
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--color-text-primary-light);
 }
