@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Template — UX Architecture</title>
+  </head>
+  <body>
+    <div id="app" class="page-template">
+      <header class="global-nav">
+        <div class="global-nav__bar">
+          <div class="global-nav__left">
+            <button class="logo-button" type="button" aria-label="Addepar home">
+              <img src="/icons/addepar-icon-black.svg" alt="" />
+            </button>
+
+            <div class="filter-chips">
+              <apl-filter-chip preset="customizable-filter" text="Book of business" disabled></apl-filter-chip>
+              <apl-filter-chip preset="customizable-filter" text="Smith family" active></apl-filter-chip>
+              <apl-filter-chip preset="customizable-filter" text="Davis Family" disabled></apl-filter-chip>
+              <apl-button icon-only size="compact" icon-transparent-background label="Add filter">
+                <apl-icon icon="plus"></apl-icon>
+                <span slot="icon-alt-text"></span>
+              </apl-button>
+            </div>
+          </div>
+
+          <div class="global-nav__right">
+            <button class="glyph-icon-button" type="button" aria-label="Addison">
+              <img src="/icons/addison-avatar.svg" alt="" />
+            </button>
+            <apl-button icon-only icon-transparent-background label="Clients">
+              <apl-icon icon="users"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <apl-button icon-only icon-transparent-background label="Reports">
+              <apl-icon icon="chart-bar"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <apl-button icon-only icon-transparent-background label="Billing">
+              <apl-icon icon="dollar-sign"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <apl-button icon-only icon-transparent-background label="Alerts">
+              <apl-icon icon="triangle-exclamation"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <button class="glyph-icon-button" type="button" aria-label="Addepar Library">
+              <img src="/icons/addepar-library.svg" alt="" />
+            </button>
+            <apl-button icon-only icon-transparent-background label="Help">
+              <apl-icon icon="question-circle"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <apl-button icon-only icon-transparent-background label="Notifications">
+              <apl-icon icon="bell"></apl-icon>
+              <span slot="icon-alt-text"></span>
+            </apl-button>
+            <div class="profile-avatar" title="Ben Adams">BA</div>
+          </div>
+        </div>
+
+        <div class="firm-name">
+          <span class="firm-name__text">Madison Capital</span>
+        </div>
+      </header>
+
+      <div class="page-container">
+        <apl-left-menu collapsible active-value="Overview" class="left-nav">
+          <apl-left-menu-item label="Overview" value="Overview" leading-icon="house"></apl-left-menu-item>
+          <apl-left-menu-item label="Performance" value="Performance" leading-icon="chart-line"></apl-left-menu-item>
+          <apl-left-menu-item label="Risk" value="Risk" leading-icon="triangle-exclamation"></apl-left-menu-item>
+          <apl-left-menu-item label="Allocation" value="Allocation" leading-icon="chart-pie"></apl-left-menu-item>
+          <apl-left-menu-item label="Cash flow" value="Cash flow" leading-icon="money-bill"></apl-left-menu-item>
+          <apl-left-menu-item label="Holdings" value="Holdings" leading-icon="layer-group"></apl-left-menu-item>
+          <apl-left-menu-item label="Documents" value="Documents" leading-icon="files"></apl-left-menu-item>
+          <apl-line level="1"></apl-line>
+          <apl-left-menu-section label="Resources" leading-icon="globe" heading-type="expandable"></apl-left-menu-section>
+          <apl-left-menu-section label="Utilities" leading-icon="screwdriver-wrench" heading-type="expandable"></apl-left-menu-section>
+        </apl-left-menu>
+
+        <div class="page-content">
+          <apl-page-header header-title="Page title" show-back-button="false"></apl-page-header>
+          <div class="content-container"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
