@@ -7,90 +7,98 @@
     <title>Page Template — UX Architecture</title>
   </head>
   <body>
-    <div id="app" class="page-template" data-layout="pill-left-rail">
+    <div id="app" class="page-template rail-expanded" data-layout="pill-left-rail" data-left-nav-theme="light" data-management-app-ux="portfolio-centric">
       <header class="global-nav">
         <div class="global-nav__bar">
           <div class="global-nav__left">
-            <button class="logo-button" type="button" aria-label="Addepar home">
-              <svg class="logo-button__icon" aria-hidden="true"><use href="/assets/apl/icons.svg#addepar-icon-white"></use></svg>
-            </button>
+            <div class="global-nav__logo-slot">
+              <button class="logo-button" type="button" aria-label="Addepar home">
+                <svg class="logo-button__icon" aria-hidden="true"><use href="/assets/apl/icons.svg#addepar-icon-white"></use></svg>
+              </button>
+            </div>
 
             <div class="filter-chips">
               <button class="filter-chip filter-chip--active" type="button" data-view="book-of-business" aria-pressed="true">
                 <svg class="filter-chip__icon" aria-hidden="true"><use href="/assets/apl/icons.svg#book-open"></use></svg>
-                Book of business
+                <span class="filter-chip__label">Book of business</span>
               </button>
-              <button class="filter-chip filter-chip--secondary" type="button" data-view="smith-family" aria-pressed="false">
-                <svg class="filter-chip__icon" aria-hidden="true"><use href="/assets/apl/icons.svg#coins"></use></svg>
-                Smith family
-                <svg class="filter-chip__chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
-                <svg class="filter-chip__close" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
-              </button>
-              <button class="filter-chip filter-chip--secondary" type="button" data-view="davis-family" aria-pressed="false">
-                <svg class="filter-chip__icon" aria-hidden="true"><use href="/assets/apl/icons.svg#coins"></use></svg>
-                Davis Family
-                <svg class="filter-chip__chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
-                <svg class="filter-chip__close" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
-              </button>
-              <button class="nav-icon-button" type="button" aria-label="Add portfolio view" data-tooltip="Add portfolio view" data-portfolio-selector-trigger="add">
-                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
-              </button>
+              <div class="chip-add-slot">
+                <button class="filter-chip filter-chip--ghost" type="button" aria-label="Add portfolio view" data-portfolio-selector-trigger="add" data-add-ghost>
+                  Add portfolio view
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                </button>
+                <button class="nav-icon-button" type="button" aria-label="Add portfolio view" data-tooltip="Add portfolio view" data-portfolio-selector-trigger="add" data-add-icon hidden>
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                </button>
+              </div>
             </div>
 
             <div class="top-rail__inline-header">
-              <span class="top-rail__firm-name">Madison Capital</span>
               <div class="top-rail__tabs">
                 <button class="top-rail__tab top-rail__tab--active" type="button" data-view="book-of-business">
                   <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#book-open"></use></svg>
-                  Book of business
+                  <span class="top-rail__tab-label">Book of business</span>
                 </button>
-                <button class="top-rail__tab" type="button" data-view="smith-family">
-                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#coins"></use></svg>
-                  Smith family
-                  <span class="top-rail__tab-messages" aria-label="9 messages">
-                    <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#comment"></use></svg>
-                    <span class="top-rail__tab-badge">9</span>
-                  </span>
-                  <svg class="icon top-rail__tab-chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
-                </button>
-                <button class="top-rail__tab" type="button" data-view="davis-family">
-                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#coins"></use></svg>
-                  Davis family
-                  <span class="top-rail__tab-messages" aria-label="4 messages">
-                    <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#comment"></use></svg>
-                    <span class="top-rail__tab-badge">4</span>
-                  </span>
-                  <svg class="icon top-rail__tab-chevron" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
-                </button>
-                <button class="top-rail__add" type="button" aria-label="Add portfolio view" data-tooltip="Add portfolio view" data-portfolio-selector-trigger="add">
-                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
-                </button>
+                <div class="chip-add-slot">
+                  <button class="top-rail__tab top-rail__tab--ghost" type="button" aria-label="Add portfolio view" data-portfolio-selector-trigger="add" data-add-ghost>
+                    Add portfolio view
+                    <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                  </button>
+                  <button class="top-rail__add" type="button" aria-label="Add portfolio view" data-tooltip="Add portfolio view" data-portfolio-selector-trigger="add" data-add-icon hidden>
+                    <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="global-nav__right">
-            <button class="glyph-icon-button" type="button" aria-label="Addison">
-              <img src="/icons/addison-avatar.svg" alt="" />
+            <button class="glyph-icon-button" type="button" aria-label="Ask Addison" data-tooltip="Ask Addison">
+              <svg class="glyph-icon-button__icon" viewBox="0 0 18 20" fill="none" aria-hidden="true">
+                <path d="M3.0209 16.6927L3.02047 16.693L1.63661 17.4988L0.5 16.8375V15.2234V13.3203V11.4172V9.51411V7.8988L1.88788 7.09251L1.88831 7.09226L3.52323 6.14027L3.52366 6.14002L4.40878 5.62581V6.66017V8.56326V10.465V12.368V14.2711V15.8864L3.0209 16.6927Z" stroke="currentColor"/>
+                <path d="M5.90436 16.1742L6.79689 15.6557L6.79732 15.6555L8.43223 14.7035L8.43266 14.7032L10.069 13.7526L10.0692 13.7525L11.7058 12.8003L11.7059 12.8002L13.3412 11.8494L13.3413 11.8494L14.7266 11.0434L16.1119 11.8494L16.1121 11.8495L17.5 12.6558V13.9836L16.1121 14.791L16.1119 14.7912L14.4754 15.7419L12.8387 16.6927L12.8383 16.693L11.2033 17.645L11.2029 17.6452L9.81779 18.4499L8.43266 17.6452L8.43223 17.645L6.79732 16.693L6.79689 16.6927L5.90436 16.1742Z" stroke="currentColor"/>
+                <path d="M14.2266 9.59618L13.3412 9.08181L13.341 9.08172L11.7059 8.13103L11.7058 8.13096L10.0692 7.17879L10.069 7.17863L8.43266 6.22803L8.43223 6.22778L6.79732 5.27579L6.79689 5.27554L5.409 4.46925V2.85394V1.23863L6.54562 0.578313L7.92974 1.3831L7.9299 1.38319L9.56635 2.33388L9.56662 2.33404L11.2031 3.28612L11.2032 3.28619L12.8384 4.23697L12.8385 4.23704L14.2266 5.0446V6.66012V8.56321V9.59618Z" stroke="currentColor"/>
+              </svg>
             </button>
-            <button class="glyph-icon-button" type="button" aria-label="Addepar Library">
-              <img src="/icons/addepar-library.svg" alt="" />
+            <button class="nav-icon-button" type="button" aria-label="Content Management" data-tooltip="Content Management" data-content-management-trigger data-agnostic-utility-app="content-management">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
             </button>
-            <button class="nav-icon-button" type="button" aria-label="Help">
+            <button class="nav-icon-button" type="button" aria-label="Report management" data-tooltip="Report management" data-report-management-trigger data-agnostic-utility-app="report-management">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
+            </button>
+            <button class="nav-icon-button" type="button" aria-label="File management" data-tooltip="File management" data-files-trigger data-agnostic-utility-app="files">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
+            </button>
+            <div class="nav-asset-menu" data-agnostic-utility-group>
+              <button class="nav-icon-button" type="button" aria-label="Asset management" data-tooltip="Asset management" data-asset-menu-trigger aria-expanded="false">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#briefcase"></use></svg>
+              </button>
+              <div class="nav-asset-menu__dropdown" data-asset-menu-dropdown hidden>
+                <button class="nav-asset-menu__item" type="button" data-content-management-trigger>
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
+                  Content management
+                </button>
+                <button class="nav-asset-menu__item" type="button" data-report-management-trigger data-asset-menu-item>
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
+                  Report management
+                </button>
+                <button class="nav-asset-menu__item" type="button" data-files-trigger data-asset-menu-item>
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
+                  File management
+                </button>
+              </div>
+            </div>
+            <button class="nav-icon-button" type="button" aria-label="Learn" data-tooltip="Learn">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#question-circle"></use></svg>
             </button>
-            <button class="nav-icon-button" type="button" aria-label="Notifications">
+            <button class="nav-icon-button" type="button" aria-label="Notifications" data-tooltip="Notifications">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#bell"></use></svg>
             </button>
-            <button class="nav-icon-button" type="button" aria-label="Firm administration" data-tooltip="Firm administration">
+            <button class="nav-icon-button" type="button" aria-label="Firm Administration" data-tooltip="Firm Administration">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#gear"></use></svg>
             </button>
             <div class="profile-avatar" title="Ben Adams">BA</div>
           </div>
-        </div>
-
-        <div class="firm-name">
-          <span class="firm-name__text">Madison Capital</span>
         </div>
 
         <div class="portfolio-selector" data-portfolio-selector hidden>
@@ -99,12 +107,53 @@
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#magnifying-glass"></use></svg>
             <input type="text" placeholder="Search portfolios" />
           </div>
-          <button class="portfolio-selector__filter" type="button">
-            <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#filter"></use></svg>
-            Filter
-            <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
-          </button>
+          <div class="portfolio-selector__filter-wrap">
+            <button class="portfolio-selector__filter" type="button" aria-expanded="false" data-filter-toggle>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#filter"></use></svg>
+              Filter
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+            </button>
+            <div class="portfolio-selector__filter-menu" data-filter-menu hidden>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="household" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                Household
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="client" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#user"></use></svg>
+                Client
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="prospect" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#user-plus"></use></svg>
+                Prospect
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="managed-fund" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#database"></use></svg>
+                Managed fund
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="legal-entity" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#building-columns"></use></svg>
+                Legal entity
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="account" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#wallet"></use></svg>
+                Account
+              </label>
+              <label class="portfolio-selector__filter-option">
+                <input type="checkbox" value="investment" />
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#coins"></use></svg>
+                Investment
+              </label>
+            </div>
+          </div>
           <div class="portfolio-selector__list">
+            <button class="portfolio-selector__item" type="button">Smith family</button>
+            <button class="portfolio-selector__item" type="button">Davis Family</button>
             <button class="portfolio-selector__item" type="button">Adam Smith</button>
             <button class="portfolio-selector__item" type="button">Adam Smith IRA Account</button>
             <button class="portfolio-selector__item" type="button">Adam Smith 401k IRA</button>
@@ -132,7 +181,7 @@
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#calendar"></use></svg>
             Meeting Prep
           </button>
-          <button class="top-rail__pill" type="button" style="--pill-color: #1b8a82;">
+          <button class="top-rail__pill" type="button" data-section="client-engagement" style="--pill-color: #1b8a82;">
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#users"></use></svg>
             Client engagement
           </button>
@@ -140,13 +189,17 @@
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#scale-unbalanced"></use></svg>
             Trading
           </button>
-          <button class="top-rail__pill" type="button" style="--pill-color: #6366f1;">
+          <button class="top-rail__pill" type="button" data-section="files" data-agnostic-app="files" style="--pill-color: #6366f1;">
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
-            Files
+            File management
           </button>
-          <button class="top-rail__pill" type="button" data-section="report-management" style="--pill-color: #2fae4e;">
+          <button class="top-rail__pill" type="button" data-section="report-management" data-agnostic-app="report-management" style="--pill-color: #2fae4e;">
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
             Report management
+          </button>
+          <button class="top-rail__pill" type="button" data-section="content-management" data-agnostic-app="content-management-mixed" style="--pill-color: #0f9d8f;">
+            <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
+            Content management
           </button>
           <button class="top-rail__pill" type="button" data-section="data-integrity" style="--pill-color: #b23bc7;">
             <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#files"></use></svg>
@@ -164,9 +217,7 @@
 
       <div class="page-container">
         <nav class="icon-rail icon-rail--expanded" aria-label="Sections">
-          <button class="icon-rail__toggle" type="button" aria-label="Collapse navigation" aria-expanded="true">
-            <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#bars"></use></svg>
-          </button>
+          <div class="rail-pointer" data-rail-pointer aria-hidden="true"></div>
 
           <div class="icon-rail__group">
             <button class="icon-rail__item" type="button" data-tooltip="Home" aria-label="Home" data-section="portfolio-analysis" hidden>
@@ -181,7 +232,7 @@
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#calendar"></use></svg>
               <span class="icon-rail__tooltip" aria-hidden="true">Meeting Prep</span>
             </button>
-            <button class="icon-rail__item" type="button" data-tooltip="Client engagement" aria-label="Client engagement">
+            <button class="icon-rail__item" type="button" data-tooltip="Client engagement" aria-label="Client engagement" data-section="client-engagement">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#users"></use></svg>
               <span class="icon-rail__tooltip" aria-hidden="true">Client engagement</span>
             </button>
@@ -189,14 +240,18 @@
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#scale-unbalanced"></use></svg>
               <span class="icon-rail__tooltip" aria-hidden="true">Trading</span>
             </button>
-            <button class="icon-rail__item" type="button" data-tooltip="Files" aria-label="Files">
+            <button class="icon-rail__item" type="button" data-tooltip="File management" aria-label="File management" data-section="files" data-agnostic-app="files">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
-              <span class="icon-rail__tooltip" aria-hidden="true">Files</span>
+              <span class="icon-rail__tooltip" aria-hidden="true">File management</span>
+            </button>
+            <button class="icon-rail__item" type="button" data-tooltip="Content management" aria-label="Content management" data-section="content-management" data-agnostic-app="content-management-mixed">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
+              <span class="icon-rail__tooltip" aria-hidden="true">Content management</span>
             </button>
           </div>
 
           <div class="icon-rail__group icon-rail__group--bottom">
-            <button class="icon-rail__item" type="button" data-tooltip="Report management" aria-label="Report management" data-section="report-management">
+            <button class="icon-rail__item" type="button" data-tooltip="Report management" aria-label="Report management" data-section="report-management" data-agnostic-app="report-management">
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
               <span class="icon-rail__tooltip" aria-hidden="true">Report management</span>
             </button>
@@ -214,6 +269,25 @@
             </button>
           </div>
 
+          <div class="icon-rail__group icon-rail__group--agnostic-pinned">
+            <button class="icon-rail__item" type="button" data-tooltip="Asset management" aria-label="Asset management" data-section="asset-management" data-section-group="report-management,files,content-management" data-agnostic-app="asset-management-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#briefcase"></use></svg>
+              <span class="icon-rail__tooltip" aria-hidden="true">Asset management</span>
+            </button>
+            <button class="icon-rail__item" type="button" data-tooltip="Content management" aria-label="Content management" data-section="content-management" data-agnostic-app="pinned-separate">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
+              <span class="icon-rail__tooltip" aria-hidden="true">Content management</span>
+            </button>
+            <button class="icon-rail__item" type="button" data-tooltip="Report management" aria-label="Report management" data-section="report-management" data-agnostic-app="pinned-separate">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
+              <span class="icon-rail__tooltip" aria-hidden="true">Report management</span>
+            </button>
+            <button class="icon-rail__item" type="button" data-tooltip="File management" aria-label="File management" data-section="files" data-agnostic-app="pinned-separate">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
+              <span class="icon-rail__tooltip" aria-hidden="true">File management</span>
+            </button>
+          </div>
+
           <div class="icon-rail__group icon-rail__group--pinned">
             <button class="icon-rail__item" type="button" data-tooltip="Messages" aria-label="Messages" data-messages-button>
               <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#comment"></use></svg>
@@ -221,6 +295,11 @@
               <span class="icon-rail__badge" data-messages-badge>9</span>
             </button>
           </div>
+
+          <button class="icon-rail__toggle" type="button" aria-label="Collapse navigation" aria-expanded="true">
+            <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-left"></use></svg>
+            <span class="icon-rail__toggle-label">Collapse</span>
+          </button>
         </nav>
 
         <div class="messages-panel" data-messages-panel hidden>
@@ -315,6 +394,7 @@
           </div>
         </div>
 
+        <div class="rounded-frame">
         <nav class="left-nav" aria-label="Primary">
           <div class="left-nav__panels">
           <div class="left-nav__title" data-left-nav-title>
@@ -366,6 +446,12 @@
                 <span>Documents</span>
               </a>
             </li>
+            <li class="left-nav__row--household-only">
+              <a class="left-nav__item" href="#tax-planning-settings">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#calculator"></use></svg>
+                <span>Tax Planning Settings</span>
+              </a>
+            </li>
           </ul>
 
           <div class="left-nav__divider"></div>
@@ -395,6 +481,68 @@
               </ul>
             </li>
           </ul>
+          </div>
+
+          <div class="left-nav__panel" data-left-nav-panel="client-engagement" hidden>
+            <ul class="left-nav__list">
+              <li>
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="left-nav__panel" data-left-nav-panel="files" hidden>
+            <ul class="left-nav__list">
+              <li>
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="left-nav__panel" data-left-nav-panel="content-management" hidden>
+            <ul class="left-nav__list">
+              <li>
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="left-nav__panel" data-left-nav-panel="asset-management" hidden>
+            <ul class="left-nav__list">
+              <li>
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li>
+                <a class="left-nav__item" href="#content-management" data-section="content-management">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-lines"></use></svg>
+                  <span>Content management</span>
+                </a>
+              </li>
+              <li>
+                <a class="left-nav__item" href="#report-management" data-section="report-management">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#chart-bar"></use></svg>
+                  <span>Report management</span>
+                </a>
+              </li>
+              <li>
+                <a class="left-nav__item" href="#files" data-section="files">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
+                  <span>File management</span>
+                </a>
+              </li>
+            </ul>
           </div>
 
           <div class="left-nav__panel" data-left-nav-panel="meeting-prep" hidden>
@@ -435,7 +583,13 @@
           <div class="left-nav__panel" data-left-nav-panel="report-management" hidden>
             <ul class="left-nav__list">
               <li>
-                <a class="left-nav__item left-nav__item--active" href="#reports">
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li>
+                <a class="left-nav__item" href="#reports">
                   <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-chart-column"></use></svg>
                   <span>Reports</span>
                 </a>
@@ -450,6 +604,15 @@
           </div>
 
           <div class="left-nav__panel" data-left-nav-panel="billing" hidden>
+            <ul class="left-nav__list">
+              <li>
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+            </ul>
+
             <ul class="left-nav__list">
               <li class="left-nav__section">
                 <button class="left-nav__section-toggle" type="button" aria-expanded="true">
@@ -516,7 +679,13 @@
           <div class="left-nav__panel" data-left-nav-panel="trading" hidden>
             <ul class="left-nav__list">
               <li>
-                <a class="left-nav__item left-nav__item--active" href="#portfolios">
+                <a class="left-nav__item left-nav__item--active" href="#overview">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#house"></use></svg>
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li>
+                <a class="left-nav__item" href="#portfolios">
                   <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#briefcase"></use></svg>
                   <span>Portfolios</span>
                 </a>
@@ -616,6 +785,11 @@
         </nav>
 
         <div class="page-content">
+          <div class="canvas-title" data-canvas-title>
+            <span class="canvas-title__section" data-canvas-title-section></span>
+            <span class="canvas-title__page" data-canvas-title-page></span>
+          </div>
+
           <div class="view" data-view-panel="smith-family">
           <div class="page-header">
             <h1 class="page-header__title">Portfolio Analysis Overview</h1>
@@ -3993,21 +4167,140 @@
               <div class="meeting-empty">No portfolios found for this client.</div>
             </div>
           </div>
+
+          <div class="view" data-view-panel-fallback hidden>
+            <div class="page-header">
+              <h1 class="page-header__title" data-view-panel-fallback-title>Portfolio Analysis Overview</h1>
+              <div class="page-header__subtitle"><span data-view-panel-fallback-label></span></div>
+            </div>
+
+            <div class="content-container">
+              <div class="meeting-empty">No data available for this portfolio yet.</div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
 
-      <div class="playground-bar">
-        <span class="playground-bar__label">Playground</span>
-        <div class="layout-switch">
-          <button class="layout-switch__option layout-switch__option--active" type="button" data-layout-mode="pill-left-rail">
-            <span class="layout-switch__letter">A</span>
-            Pill + left rail
-          </button>
-          <button class="layout-switch__option" type="button" data-layout-mode="tabs-top-rail">
-            <span class="layout-switch__letter">B</span>
-            Tabs + top rail
-          </button>
+      <div class="playground-drawer playground-drawer--inline" data-playground-drawer>
+        <div class="playground-drawer__panel" data-playground-panel>
+          <div class="playground-drawer__section">
+            <div class="playground-drawer__section-title">UI Style</div>
+            <div class="playground-radio-group" data-radio-group>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="ui-style-layout" value="pill-left-rail" data-layout-mode="pill-left-rail" checked>
+                Pill + left rail
+              </label>
+
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="ui-style-layout" value="tabs-top-rail" data-layout-mode="tabs-top-rail">
+                Tabs + top rail
+              </label>
+
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="ui-style-layout" value="rounded-frame" data-layout-mode="rounded-frame">
+                Rounded frame
+              </label>
+            </div>
+          </div>
+          <div class="playground-drawer__section playground-drawer__section--divided">
+            <div class="playground-drawer__section-title">Colors</div>
+            <div class="playground-radio-group" data-radio-group>
+              <div class="playground-radio-group__subtitle">Left nav</div>
+              <label class="playground-radio-group__suboption">
+                <input class="playground-radio-group__radio" type="radio" name="left-nav-theme" value="light" data-left-nav-theme-option="light" checked>
+                Light
+              </label>
+              <label class="playground-radio-group__suboption">
+                <input class="playground-radio-group__radio" type="radio" name="left-nav-theme" value="dark" data-left-nav-theme-option="dark">
+                Dark
+              </label>
+              <label class="playground-radio-group__suboption">
+                <input class="playground-radio-group__radio" type="radio" name="left-nav-theme" value="custom" data-left-nav-theme-option="custom" data-radio-nest-key="custom">
+                Custom
+              </label>
+              <div class="playground-radio-group__nested" data-radio-nested-for="custom">
+                <label class="playground-radio-group__suboption playground-radio-group__suboption--color">
+                  <input class="playground-radio-group__color" type="color" data-custom-left-nav-color value="#3a3d44" disabled>
+                  Left nav + pointer color
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="playground-drawer__section playground-drawer__section--divided">
+            <div class="playground-drawer__section-title">Management App UX</div>
+            <div class="playground-radio-group" data-radio-group>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="management-app-ux" value="portfolio-centric" checked>
+                Make portfolio-centric
+              </label>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="management-app-ux" value="portfolio-agnostic" data-radio-nest-key="portfolio-agnostic">
+                Make portfolio agnostic
+              </label>
+            </div>
+          </div>
+          <div class="playground-drawer__section playground-drawer__section--divided" data-radio-nested-for="portfolio-agnostic">
+            <div class="playground-drawer__section-title">Agnostic app style</div>
+            <div class="playground-radio-group" data-radio-group>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="agnostic-app-style" value="left-rail" data-radio-nest-key="left-rail" disabled checked>
+                Agnostic apps in left rail
+              </label>
+              <div class="playground-radio-group__nested" data-radio-nested-for="left-rail">
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-rail-mode" value="one-product" disabled checked>
+                  One product
+                </label>
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-rail-mode" value="pinned-bottom" disabled>
+                  Pinned at bottom
+                </label>
+                <div class="playground-radio-group__subtitle">Pill visual</div>
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-pill-visual" value="disable" disabled checked>
+                  Disable
+                </label>
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-pill-visual" value="animate" disabled>
+                  Animate
+                </label>
+              </div>
+
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="agnostic-app-style" value="utility-area" data-radio-nest-key="utility-area" disabled>
+                Agnostic apps in utility area
+              </label>
+              <div class="playground-radio-group__nested" data-radio-nested-for="utility-area">
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-utility-mode" value="individually" disabled checked>
+                  Individually
+                </label>
+                <label class="playground-radio-group__suboption">
+                  <input class="playground-radio-group__radio" type="radio" name="agnostic-utility-mode" value="group" disabled>
+                  In a group
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="playground-drawer__section playground-drawer__section--divided playground-drawer__section--pinned-end">
+            <div class="playground-drawer__section-title">Console</div>
+            <div class="playground-radio-group" data-radio-group>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="console-mode" value="inline" data-console-mode-option="inline" checked>
+                Inline
+              </label>
+              <label class="playground-radio-group__option">
+                <input class="playground-radio-group__radio" type="radio" name="console-mode" value="overlay" data-console-mode-option="overlay">
+                Overlay
+              </label>
+            </div>
+          </div>
         </div>
+        <button class="playground-drawer__handle" type="button" data-playground-toggle aria-expanded="false" aria-label="Toggle playground drawer">
+          <svg class="icon playground-drawer__handle-icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-up"></use></svg>
+          <span class="playground-drawer__handle-label">Playground console</span>
+        </button>
       </div>
     </div>
 
@@ -4336,6 +4629,260 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" data-content-management-overlay hidden>
+      <div class="modal" role="dialog" aria-label="Content Management">
+        <div class="modal__header">
+          <h2 class="modal__title">Content Management</h2>
+          <div class="modal__header-actions">
+            <button class="table-icon-button" type="button" aria-label="Open in new tab" data-content-management-open>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up-right-from-square"></use></svg>
+            </button>
+            <button class="table-icon-button" type="button" aria-label="Close" data-content-management-close>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal__body">
+          <nav class="modal__nav modal__nav--flat">
+            <a class="left-nav__item left-nav__item--active" href="#firm-content">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#folder"></use></svg>
+              Firm Content
+            </a>
+            <a class="left-nav__item" href="#library">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#layer-group"></use></svg>
+              Library
+            </a>
+            <a class="left-nav__item modal__nav-bottom-item" href="#product-settings">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#gear"></use></svg>
+              Product Settings
+            </a>
+          </nav>
+
+          <div class="modal__content">
+            <div class="modal__content-header">
+              <h1 class="page-header__title">Firm Content</h1>
+              <button class="btn-primary" type="button">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                Create Content
+              </button>
+            </div>
+
+            <div class="content-mgmt-viewby">
+              <span class="content-mgmt-viewby__label">View by:</span>
+              <div class="content-mgmt-viewby__toggle">
+                <button class="content-mgmt-viewby__option content-mgmt-viewby__option--active" type="button">Content</button>
+                <button class="content-mgmt-viewby__option" type="button">Product</button>
+              </div>
+            </div>
+
+            <div class="billing-toolbar">
+              <div class="reports-search billing-search">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#magnifying-glass"></use></svg>
+                <input type="text" placeholder="Search" />
+              </div>
+              <button class="filter-pill" type="button">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#filter"></use></svg>
+                Type
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+              </button>
+              <button class="filter-pill" type="button">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#filter"></use></svg>
+                Purpose
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#angle-down"></use></svg>
+              </button>
+            </div>
+
+            <div class="content-list">
+              <div class="content-list__header">
+                <div></div>
+                <div></div>
+                <div class="content-list__col-header">Status <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up"></use></svg></div>
+                <div class="content-list__col-header">Last Modified <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up"></use></svg></div>
+                <div class="content-list__col-header">Product Use <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up"></use></svg></div>
+                <div class="content-list__col-header">Content Use <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up"></use></svg></div>
+                <div></div>
+              </div>
+
+              <div class="content-list__row">
+                <div class="content-list__thumb"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#table-cells"></use></svg></div>
+                <div class="content-list__body">
+                  <div class="content-list__type">View</div>
+                  <div class="content-list__title">Allocation – Asset Class vs. Target</div>
+                  <p class="content-list__description">Displays portfolio allocation by asset class compared to target weights.</p>
+                  <div class="content-list__tags">
+                    <span class="content-list__tag">Advisory</span>
+                    <span class="content-list__tag">Client-facing</span>
+                  </div>
+                </div>
+                <div class="content-list__col"><span class="content-list__status">Published</span></div>
+                <div class="content-list__col">05/12/2026 · M. Berg</div>
+                <div class="content-list__col">2 Products</div>
+                <div class="content-list__col">2 Objects</div>
+                <button class="table-icon-button" type="button" aria-label="More options"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#ellipsis"></use></svg></button>
+              </div>
+
+              <div class="content-list__row">
+                <div class="content-list__thumb"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#image"></use></svg></div>
+                <div class="content-list__body">
+                  <div class="content-list__type">Widget</div>
+                  <div class="content-list__title">Asset Allocation Deviation</div>
+                  <p class="content-list__description">Shows deviation from target allocation across all asset classes.</p>
+                  <div class="content-list__tags">
+                    <span class="content-list__tag">Advisory</span>
+                    <span class="content-list__tag">Internal</span>
+                  </div>
+                </div>
+                <div class="content-list__col"><span class="content-list__status">Published</span></div>
+                <div class="content-list__col">05/10/2026 · M. Berg</div>
+                <div class="content-list__col">2 Products</div>
+                <div class="content-list__col">2 Objects</div>
+                <button class="table-icon-button" type="button" aria-label="More options"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#ellipsis"></use></svg></button>
+              </div>
+
+              <div class="content-list__row">
+                <div class="content-list__thumb"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#image"></use></svg></div>
+                <div class="content-list__body">
+                  <div class="content-list__type">Widget</div>
+                  <div class="content-list__title">Performance vs. Benchmarks</div>
+                  <p class="content-list__description">Compares portfolio performance against selected benchmarks over multiple periods.</p>
+                  <div class="content-list__tags">
+                    <span class="content-list__tag">Client-facing</span>
+                    <span class="content-list__tag">Advisory</span>
+                  </div>
+                </div>
+                <div class="content-list__col"><span class="content-list__status">Published</span></div>
+                <div class="content-list__col">05/09/2026 · J. Torres</div>
+                <div class="content-list__col">2 Products</div>
+                <div class="content-list__col">1 Object</div>
+                <button class="table-icon-button" type="button" aria-label="More options"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#ellipsis"></use></svg></button>
+              </div>
+
+              <div class="content-list__row">
+                <div class="content-list__thumb"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#image"></use></svg></div>
+                <div class="content-list__body">
+                  <div class="content-list__type">Widget</div>
+                  <div class="content-list__title">Holdings Summary</div>
+                  <p class="content-list__description">Lists all current holdings with weight, market value, and gain/loss.</p>
+                  <div class="content-list__tags">
+                    <span class="content-list__tag">Client-facing</span>
+                  </div>
+                </div>
+                <div class="content-list__col"><span class="content-list__status">Published</span></div>
+                <div class="content-list__col">05/07/2026 · M. Berg</div>
+                <div class="content-list__col">3 Products</div>
+                <div class="content-list__col">1 Object</div>
+                <button class="table-icon-button" type="button" aria-label="More options"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#ellipsis"></use></svg></button>
+              </div>
+
+              <div class="content-list__row">
+                <div class="content-list__thumb"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#image"></use></svg></div>
+                <div class="content-list__body">
+                  <div class="content-list__type">Widget</div>
+                  <div class="content-list__title">Cash Flow</div>
+                  <p class="content-list__description">Summarises contributions, withdrawals, dividends, and fees over a date range.</p>
+                  <div class="content-list__tags">
+                    <span class="content-list__tag">Advisory</span>
+                    <span class="content-list__tag">Internal</span>
+                  </div>
+                </div>
+                <div class="content-list__col"><span class="content-list__status">Draft</span></div>
+                <div class="content-list__col">05/13/2026 · J. Torres</div>
+                <div class="content-list__col">3 Products</div>
+                <div class="content-list__col">—</div>
+                <button class="table-icon-button" type="button" aria-label="More options"><svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#ellipsis"></use></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" data-report-management-overlay hidden>
+      <div class="modal" role="dialog" aria-label="Report management">
+        <div class="modal__header">
+          <h2 class="modal__title">Report management</h2>
+          <div class="modal__header-actions">
+            <button class="table-icon-button" type="button" aria-label="Open in new tab" data-report-management-open>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up-right-from-square"></use></svg>
+            </button>
+            <button class="table-icon-button" type="button" aria-label="Close" data-report-management-close>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal__body">
+          <nav class="modal__nav modal__nav--flat">
+            <a class="left-nav__item left-nav__item--active" href="#reports">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#file-chart-column"></use></svg>
+              Reports
+            </a>
+            <a class="left-nav__item" href="#report-runs">
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#clock-rotate-left"></use></svg>
+              Report runs
+            </a>
+          </nav>
+
+          <div class="modal__content">
+            <div class="modal__content-header">
+              <h1 class="page-header__title">Reports</h1>
+              <button class="btn-primary" type="button">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#plus"></use></svg>
+                Create report
+              </button>
+            </div>
+
+            <div class="billing-toolbar">
+              <div class="reports-search billing-search">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#magnifying-glass"></use></svg>
+                <input type="text" placeholder="Search by report name" />
+              </div>
+              <button class="filter-pill" type="button">
+                Access
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#caret-down"></use></svg>
+              </button>
+              <button class="filter-pill" type="button">
+                Schedule
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#caret-down"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" data-files-overlay hidden>
+      <div class="modal" role="dialog" aria-label="File management">
+        <div class="modal__header">
+          <h2 class="modal__title">File management</h2>
+          <div class="modal__header-actions">
+            <button class="table-icon-button" type="button" aria-label="Open in new tab" data-files-open>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#arrow-up-right-from-square"></use></svg>
+            </button>
+            <button class="table-icon-button" type="button" aria-label="Close" data-files-close>
+              <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#xmark"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="modal__body">
+          <div class="modal__content">
+            <div class="modal__content-header">
+              <h1 class="page-header__title">File management</h1>
+            </div>
+
+            <div class="billing-toolbar">
+              <div class="reports-search billing-search">
+                <svg class="icon" aria-hidden="true"><use href="/assets/apl/icons.svg#magnifying-glass"></use></svg>
+                <input type="text" placeholder="Search files" />
+              </div>
             </div>
           </div>
         </div>
